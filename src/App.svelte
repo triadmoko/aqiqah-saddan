@@ -24,10 +24,56 @@
   setInterval(() => {
     ({ hari, jam, menit, detik } = hitungMundur());
   }, 1000);
+
+  import { onMount } from "svelte";
+
+  let audioPlayer;
+
+  onMount(() => {
+    audioPlayer = new Audio("backsound-AQIQAH-DIGITAL-1.mp3");
+    audioPlayer.loop = true;
+    audioPlayer.play();
+  });
+
+  function toggleMusic() {
+    if (audioPlayer.paused) {
+      audioPlayer.play();
+    } else {
+      audioPlayer.pause();
+    }
+  }
 </script>
 
+<svelte:head>
+  <title>Tasyakuran Aqiqah Saddam Manaf Hasyim</title>
+  <meta property="og:title" content="Tasyakuran Aqiqah" />
+  <meta
+    property="og:image"
+    content="7933ab41-013a-41ea-80b3-a198972da5a3.jpeg"
+  />
+  <meta
+    property="og:description"
+    content="Undangan Tasyakuran Aqiqah Saddam Manaf Hasyim"
+  />
+  <meta
+    name="description"
+    content="Undangan Tasyakuran Aqiqah Saddam Manaf Hasyim"
+  />
+</svelte:head>
 <center>
   <main class="min-h-screen">
+    <div class="fixed bottom-4 left-4 z-50">
+      <button
+        on:click={toggleMusic}
+        class="bg-[#79c7a1] text-white px-4 py-2 rounded-full shadow-lg"
+      >
+        {#if audioPlayer && !audioPlayer.paused}
+          Pause
+        {:else}
+          Play
+        {/if}
+      </button>
+    </div>
     <div
       class="w-full h-screen px-4 pt-5"
       style="background-image: url('bg.png'); background-size: cover; background-repeat: repeat; background-position: center;"
@@ -58,7 +104,7 @@
 
         <div class="mb-4">
           <img
-            src="profile.jpeg"
+            src="7933ab41-013a-41ea-80b3-a198972da5a3.jpeg"
             alt="Foto Aqiqah"
             class="w-48 h-48 object-cover rounded-full mx-auto"
           />
@@ -183,34 +229,95 @@
             <div class="grid grid-cols-2 gap-4 mt-6">
               <div>
                 <img
-                  src="profile.jpeg"
-                  alt="Gambar 1"
+                  src="5131c67b-0ac9-4be8-a4f0-48f130134240.jpeg"
+                  alt="Gambar 4"
                   class="w-full h-auto rounded-lg"
                 />
               </div>
               <div>
                 <img
-                  src="profile.jpeg"
+                  src="219edac2-1d61-438d-a6d5-9d1dd6accf19.jpeg"
                   alt="Gambar 2"
                   class="w-full h-auto rounded-lg"
                 />
               </div>
               <div>
                 <img
-                  src="profile.jpeg"
+                  src="354ee1d7-028b-491c-9279-bd6ab52879fe.jpeg"
                   alt="Gambar 3"
                   class="w-full h-auto rounded-lg"
                 />
               </div>
               <div>
                 <img
-                  src="profile.jpeg"
-                  alt="Gambar 4"
+                  src="7933ab41-013a-41ea-80b3-a198972da5a3.jpeg"
+                  alt="Gambar 1"
                   class="w-full h-auto rounded-lg"
                 />
               </div>
             </div>
           </div>
+        </div>
+
+        <div
+          style="background-image: url('bg.png'); background-size: cover; background-repeat: repeat; background-position: center;"
+          class="text-center py-8 w-full"
+        >
+          <div class="flex justify-center gap-4">
+            <img src="2-12-e1677209532589.webp" alt="" />
+            <img src="2-12-e1677209532589.webp" alt="" />
+          </div>
+          <div class="relative flex justify-center mb-12">
+            <div
+              class="rounded-full w-72 h-72 flex items-center justify-center mb-2 absolute"
+            >
+              <img
+                src="awan.webp"
+                alt="Awan"
+                class="h-20 w-20 left-0 absolute"
+              />
+              <svg viewBox="0 0 100 100" class="absolute inset-0">
+                <defs>
+                  <path
+                    id="circle"
+                    d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                  />
+                </defs>
+                <text font-size="10" text-anchor="middle" class="font-delius">
+                  <textPath xlink:href="#circle" startOffset="25%">
+                    Tasyakuran Aqiqah
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <img
+              src="7933ab41-013a-41ea-80b3-a198972da5a3.jpeg"
+              alt="Foto Aqiqah"
+              class="w-48 h-48 object-cover rounded-full mx-auto"
+            />
+          </div>
+          <div class="text-center flex flex-col items-center gap-4">
+            <h1 class="text-2xl font-bold mb-2 font-delius">
+              Saddam Manaf Hasyim. F
+            </h1>
+          </div>
+          <p class="text-md font-delius text-slate-800 mt-4">
+            Kami Yang Berbahagia Keluarga Besar
+          </p>
+          <h1 class="text-2xl font-delius">Bpk. Rio & Ibu Ririn</h1>
+          <p class="text-md font-delius text-slate-800 mt-4">
+            Atas kehadiran dan doa restunya kami ucapkan terima kasih
+          </p>
+          <p class="text-md font-delius text-slate-800 mt-4">
+            Wassalamu’alaikum Wr. Wb.
+          </p>
+        </div>
+        <div class="flex justify-center gap-4">
+          <img src="2-12-e1677209532589.webp" alt="" />
+          <img src="2-12-e1677209532589.webp" alt="" />
         </div>
       </div>
     </div>
