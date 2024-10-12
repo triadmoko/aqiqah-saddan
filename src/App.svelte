@@ -7,7 +7,7 @@
   $: nama = urlParams.get("to") || "";
 
   function hitungMundur() {
-    const tanggalTujuan = new Date("2024-10-20T15:00:00+07:00").getTime();
+    const tanggalTujuan = new Date("2024-10-19T15:00:00+07:00").getTime();
     const sekarang = new Date().getTime();
     const selisih = tanggalTujuan - sekarang;
 
@@ -121,7 +121,7 @@
             Ibu Ririn Meiriza
           </p>
         </div>
-        <h1>Minggu, 20 Oktober 2024</h1>
+        <h1>Sabtu, 19 Oktober 2024</h1>
         <div class="grid grid-cols-4 gap-4 mb-8 mt-8">
           <div
             class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center"
@@ -209,7 +209,7 @@
             </div>
             <div class="mt-4">
               <p class="text-md font-delius">
-                <strong>Hari/Tanggal:</strong> Minggu, 20 Oktober 2024
+                <strong>Hari/Tanggal:</strong> Sabtu, 19 Oktober 2024
               </p>
               <p class="text-md mt-2 font-delius">
                 <strong>Waktu:</strong> 15.00 WIB - Selesai
